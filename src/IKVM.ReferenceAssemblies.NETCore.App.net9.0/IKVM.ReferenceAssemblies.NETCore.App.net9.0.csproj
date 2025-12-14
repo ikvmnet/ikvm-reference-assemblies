@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETCore.App.Ref" Version="9.0.11" IncludeAssets="none" PrivateAssets="all" GeneratePathProperty="true" ExcludeAssets="analyzers" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="buildTransitive\**\*" Pack="true" PackagePath="buildTransitive\%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(PkgMicrosoft_NETCore_App_Ref)\ref\net9.0\**\*" Link="netref\net9.0\%(RecursiveDir)%(Filename)%(Extension)">
+            <TargetPath>netref\net9.0\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+            <PackagePath>netref\net9.0\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+        </None>
+    </ItemGroup>
+
+</Project>
