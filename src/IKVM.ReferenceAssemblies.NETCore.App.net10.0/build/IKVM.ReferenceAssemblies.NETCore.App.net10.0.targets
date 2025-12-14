@@ -1,8 +1,0 @@
-<Project>
-    <ItemGroup>
-        <None Include="$(MSBuildThisFileDirectory)\..\netref\**\*">
-            <TargetPath>netref\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
-</Project>
