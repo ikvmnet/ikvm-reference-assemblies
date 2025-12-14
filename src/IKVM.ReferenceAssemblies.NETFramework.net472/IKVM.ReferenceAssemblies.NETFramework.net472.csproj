@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" GeneratePathProperty="true" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\IKVM.ReferenceAssemblies\IKVM.ReferenceAssemblies.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="build\**\*" Pack="true" PackagePath="buildTransitive\%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <__ReferenceAssemblies Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net472)\build\.NETFramework\v4.7.2\*.dll" />
+        <__ReferenceAssemblies Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net472)\build\.NETFramework\v4.7.2\Facades\*.dll" />
+        <None Include="@(__ReferenceAssemblies)" Link="netfxref\net472\%(RecursiveDir)%(Filename)%(Extension)">
+            <TargetPath>netfxref\net472\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+            <PackagePath>netfxref\net472\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+        </None>
+    </ItemGroup>
+
+</Project>

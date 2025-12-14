@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <IkvmNetReferenceAssemblies Include="$(MSBuildThisFileDirectory)\..\netfxref\**\*" />
+    </ItemGroup>
+</Project>
