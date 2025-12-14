@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="build\**\*" Pack="true" PackagePath="buildTransitive\%(RecursiveDir)%(Filename)%(Extension)" />
+        <None Include="build\**\*" Pack="true" PackagePath="build\%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
 </Project>
