@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageProjectReference Include="..\IKVM.ReferenceAssemblies\IKVM.ReferenceAssemblies.csproj" PackageTargetPath="." />
         <PackageProjectReference Include="..\IKVM.ReferenceAssemblies.NETCore.App.net6.0\IKVM.ReferenceAssemblies.NETCore.App.net6.0.csproj" PackageTargetPath="." />
         <PackageProjectReference Include="..\IKVM.ReferenceAssemblies.NETCore.App.net7.0\IKVM.ReferenceAssemblies.NETCore.App.net7.0.csproj" PackageTargetPath="." />
         <PackageProjectReference Include="..\IKVM.ReferenceAssemblies.NETCore.App.net8.0\IKVM.ReferenceAssemblies.NETCore.App.net8.0.csproj" PackageTargetPath="." />
