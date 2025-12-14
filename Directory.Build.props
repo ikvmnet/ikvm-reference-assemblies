@@ -10,7 +10,7 @@
     <PropertyGroup Label="Copyright Info">
         <ProductName>IKVM.ReferenceAssemblies</ProductName>
         <Authors>@(Authors, ',')</Authors>
-        <CurrentYear Condition=" '$(CurrentYear)' == '' ">$([System.DateTime]::UtcNow.Year.ToString())</CurrentYear>
+        <CurrentYear Condition=" '$(CurrentYear)' == '' ">$([System.DateTime]::UtcNow.Year.ToString())</CurrentYear> 
         <Copyright>Copyright © $(CurrentYear) @(Authors, ', ')</Copyright>
     </PropertyGroup>
 
