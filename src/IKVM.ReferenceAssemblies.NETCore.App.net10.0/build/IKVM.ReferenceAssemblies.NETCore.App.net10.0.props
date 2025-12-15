@@ -2,11 +2,10 @@
     <ItemGroup>
         <IkvmNetReferenceAssemblies Remove="@(IkvmNetReferenceAssemblies)" />
         <IkvmNetReferenceAssemblies Include="$(MSBuildThisFileDirectory)\..\netref\**\*" />
-        <None Include="@(IkvmNetReferenceAssemblies)" Visible="false">
+        <None Include="@(IkvmNetReferenceAssemblies)">
             <TargetPath>netref\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
-            <PackagePath>netref\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <Pack>true</Pack>
+            <Visible>false</Visible>
         </None>
     </ItemGroup>
 </Project>

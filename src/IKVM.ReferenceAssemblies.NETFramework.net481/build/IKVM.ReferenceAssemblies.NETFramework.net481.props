@@ -2,11 +2,10 @@
     <ItemGroup>
         <IkvmNetReferenceAssemblies Remove="@(IkvmNetReferenceAssemblies)" />
         <IkvmNetReferenceAssemblies Include="$(MSBuildThisFileDirectory)\..\netfxref\**\*" />
-        <None Include="@(IkvmNetReferenceAssemblies)" Visible="false">
+        <None Include="@(IkvmNetReferenceAssemblies)">
             <TargetPath>netfxref\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
-            <PackagePath>netfxref\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <Pack>true</Pack>
+            <Visible>false</Visible>
         </None>
     </ItemGroup>
 </Project>
